@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="spring-beans-3.2.9.RELEASE (3)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/flower/web/WEB-INF/lib/spring-beans-3.2.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/flower/web/WEB-INF/lib/com.springsource.org.apache.commons.logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/flower/web/WEB-INF/lib/spring-webmvc-3.2.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/flower/web/WEB-INF/lib/spring-web-3.2.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/flower/web/WEB-INF/lib/spring-expression-3.2.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/flower/web/WEB-INF/lib/spring-context-3.2.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/flower/web/WEB-INF/lib/spring-core-3.2.9.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

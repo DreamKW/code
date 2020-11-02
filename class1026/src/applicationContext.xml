@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!--在容器中添加dog实体id 及想要在容器中获取的对象的名称，class表示此名称对应的类-->
+    <!--<bean id="dog" class="class1026.Dog">-->
+        <!--&lt;!&ndash; collaborators and configuration for this bean go here &ndash;&gt;-->
+    <!--</bean>-->
+   <!--其他的xml文件 一个入口-->
+   <import resource="tuser.xml"/>
+   <!-- 配置扫描的包 -->
+   <!--<context:component-scan base-package="class1027"></context:component-scan>-->
+</beans>

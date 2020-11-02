@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="json-lib-2.3-jdk15">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/meeting/web/WEB-INF/jsonlib/json-lib-2.3-jdk15.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

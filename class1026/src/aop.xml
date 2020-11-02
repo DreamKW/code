@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--    &lt;!&ndash; 开启自动扫描 &ndash;&gt;-->
+        <context:component-scan base-package="class1027"></context:component-scan>
+    <!--    &lt;!&ndash; spring中使用aspectj包中的@Aspect注解标注当前组件为切面，-->
+    <!--           如果要使用 注解配置切面 必须开启aspectj的 自动代理模式 &ndash;&gt;-->
+    <!--切点还是要在springmvc中配置-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+
+    <!-- 配置目标程序的bean-->
+    <bean id="target" class="class1027.Target"></bean>
+    <!-- 配置前置程序的bean-->
+    <!--<bean id="before" class="class1027.Before"></bean>-->
+    <!--配置后置程序的bean-->
+    <!--<bean id="after" class="class1027.after"></bean>-->
+    <!--配置异常程序的bean-->
+    <!--<bean id="myexception" class="class1027.MyException"></bean>-->
+    <!--配置最终通知-->
+    <!--<bean id="myEventafter" class="class1027.EventAfter"></bean>-->
+    <!--配置环绕程序的bean 有环绕就不要有前置 后置 最终-->
+    <!--<bean id="arround" class="class1027.Arround"></bean>-->
+
+                            <!-- 配置前置通知-->
+   <!-- <aop:config>
+        &lt;!&ndash; 配置切点&ndash;&gt;
+        <aop:pointcut id="mycut" expression="execution(* class1027.Target.getTar(*))"/>
+        &lt;!&ndash; 配置前置通知&ndash;&gt;
+        <aop:aspect ref="before">
+            <aop:before method="doBefore" pointcut-ref="mycut"></aop:before>
+        </aop:aspect>
+         &lt;!&ndash;配置后置通知&ndash;&gt;
+        <aop:aspect ref="after">
+            <aop:after-returning method="getAfter" pointcut-ref="mycut" returning="obj"></aop:after-returning>
+        </aop:aspect>
+        &lt;!&ndash;配置异常通知&ndash;&gt;
+        <aop:aspect ref="myexception">
+            <aop:after-throwing method="getException" pointcut-ref="mycut" throwing="e"></aop:after-throwing>
+        </aop:aspect>
+        &lt;!&ndash;配置最终通知&ndash;&gt;
+        <aop:aspect ref="myEventafter">
+            <aop:after-returning method="doevent" pointcut-ref="mycut" returning="joinPoint"></aop:after-returning>
+        </aop:aspect>
+        &lt;!&ndash;配置环绕程序&ndash;&gt;
+        <aop:aspect ref="arround" >
+            <aop:around method="getArround" pointcut-ref="mycut" ></aop:around>
+        </aop:aspect>
+    </aop:config>-->
+</beans>

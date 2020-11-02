@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schools>
+	 <school id="1" name="School1">
+	 	<class id="11" name="class11">
+	 		<student id="111" name="student111" />
+	 		<student id="112" name="student112" />
+	 		<student id="113" name="student113" />	 		
+	 	</class>
+	 	<class id="12" name="class12">
+	 		<student id="121" name="student121" />	 			
+	 		<student id="122" name="student122" />	 		
+	 	</class>
+	 	<class id="13" name="class13">
+	 		<student id="131" name="student131" />	 			
+	 	</class>
+	 </school>
+	 <school id="2" name="School22">
+	     <class id="21" name="class21">
+	 		<student id="200" name="student200" />	 			
+	 	</class>	 	
+	 </school>
+</schools>

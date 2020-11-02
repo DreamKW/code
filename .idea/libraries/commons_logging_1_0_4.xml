@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="commons-logging-1.0.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/meeting/web/WEB-INF/jsonlib/commons-logging-1.0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--扫描包  使用注解  必须要添加扫描-->
+    <context:component-scan base-package="com.etc.flower.controller" />
+
+    <!--视图解析-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name ="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <!--前缀-->
+        <property name="prefix" value="/WEB-INF/"/>
+        <!--后缀 可以省略-->
+        <!--<property name="suffix" value=".jsp"/>-->
+    </bean>
+
+    <!-- 异常处理解析器 -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!-- pro的key表示的是异常的类型，值表示的是发生了那些异常需要跳转的页面 -->
+                <prop key="java.lang.Throwable">/error</prop>
+                <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">error.jsp</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--文件上传解析器-->
+    <bean id ="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <property name="maxUploadSize" value="1000"/>
+    </bean>
+</beans>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dog" class="class1026.Dog" scope="prototype">
+        <constructor-arg index="0" value="haha"></constructor-arg>
+        <constructor-arg index="1" value="4"></constructor-arg>
+    </bean>
+    <!-- 配置静态工厂模式-->
+    <bean id="product" class="class1026.StaticFactory" factory-method="getPro"></bean>
+    <!--配置普通工厂模式-->
+    <!--先配置一个普通工厂对象-->
+    <bean id="factory" class="class1026.NormalFactory"/>
+    <bean id="pro" factory-bean="factory" factory-method="getPro"/>
+
+    <bean id="boy" class="class1026.Boy">
+        <!--  constructor 与构造方法参数有关  依赖注入没关-->
+        <constructor-arg index="0" value="aa"></constructor-arg>
+        <constructor-arg index="1" value="12"></constructor-arg>
+        <constructor-arg index="2" value="12"></constructor-arg>
+        <!--<constructor-arg index="3" value="12"></constructor-arg>-->
+        <!--依赖注入没关-->
+        <!--对象的依赖注入-->
+        <property name="dog" ref="dog"></property>
+        <property name="product" ref="pro"/>
+        <!--基本数据类型的依赖注入-->
+        <property name="address" value="北京昌平"/>
+        <!--list集合的注入-->
+        <property name="list">
+            <list>
+                <value type="java.lang.String">list</value>
+                <ref bean="dog"></ref>
+                <value type="int">22</value>
+            </list>
+        </property>
+        <!--Map集合的注入-->
+        <property name="map">
+            <map>
+                <entry key="1" value="cn"></entry>
+                <entry key-ref="dog" value="gg"></entry>
+                <entry key="2" value-ref="dog"></entry>
+            </map>
+        </property>
+
+    </bean>
+
+
+<!--作业-->
+    <bean id="dog2" class="class1026.Dog" scope="prototype">
+        <constructor-arg index="0" value="haha"></constructor-arg>
+        <constructor-arg index="1" value="4"></constructor-arg>
+    </bean>
+    <bean id="dog3" class="class1026.Dog" scope="prototype">
+        <constructor-arg index="0" value="haha"></constructor-arg>
+        <constructor-arg index="1" value="4"></constructor-arg>
+    </bean>
+    <!--作业一  -->
+    <bean id="boy1" class="class1026.Boy">
+        <property name="dogList">
+            <list>
+                <ref bean="dog2"></ref>
+                <ref bean="dog3"></ref>
+            </list>
+        </property>
+<!--作业二-->
+        <!--set集合的注入-->
+        <property name="set">
+            <set>
+                <value type="java.lang.String">set注入</value>
+                <ref bean="pro"></ref>
+                <value type="int">23</value>
+            </set>
+        </property>
+<!--作业四  Map 泛型注入-->
+        <property name="dogMap">
+            <map>
+                <entry key="0" value-ref="dog2"></entry>
+                <entry key="1" value-ref="dog3"></entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>
